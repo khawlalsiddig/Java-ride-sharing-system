@@ -1,4 +1,4 @@
-public class RiderList implements IRiderList {
+public class RideList implements IRideList {
 
     private LinkedList<IRider> riders;
 
