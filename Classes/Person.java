@@ -1,47 +1,51 @@
-abstract class Person implements IPerson {
+public abstract class Person implements IPerson {
     private int id;
     private String name;
     private String phoneNumber;
-    private LinkedList<IRide> rideHistory;
     
 
-    protected Person(int id, String name, String phoneNumber, LinkedList<IRide> rideHistory) {
+    //Person constructor
+    protected Person(int id, String name, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.rideHistory = new LinkedList<IRide>();
     }
     
     //return the unique ID of this person.
-int getId(){
-return id;
-}
-//return the full name of this person.
-String getName(){
-return name;
-}
-//Sets the full name of this person.
-void setName(String name){
+    public int getId(){
+        return id;
+    }
+    //return the full name of this person.
+    public String getName(){
+        return name;
+    }
+    //Sets the full name of this person.
+    public void setName(String name){
     this.name = name;
 }
-//return the phone number of this person.
-String getPhoneNumber(){
-return phoneNumber;
-}
-/**
-* Sets the phone number of this person.
-* The phone number must be exactly 10 digits (numeric characters only,
-* e.g., "0551234567"). Implementations must validate the format and
-* throw IllegalArgumentException if it does not match.
-*/
-void setPhoneNumber(String phoneNumber){
-    this.phoneNumber = phoneNumber;
-}
-//return the list of rides associated with this person (as a rider, or as an assigned driver).
-LinkedList<IRide> getRideHistory() {
-    return null;
-}
-// Returns a formatted string describing this person.
-@Override
- String toString();
+    //return the phone number of this person.
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
+    /**
+    * Sets the phone number of this person.
+    * The phone number must be exactly 10 digits (numeric characters only,
+    * e.g., "0551234567"). Implementations must validate the format and
+    * throw IllegalArgumentException if it does not match.
+    */
+    public void setPhoneNumber(String phoneNumber) {
+        if(phoneNumber == null || !phoneNumber.matches("\\d{10}")) {
+            throw new IllegalArgumentException("The phone number must be 10 digits!");
+        }
+        this.phoneNumber = phoneNumber;
+    }
+    //return the list of rides associated with this person (as a rider, or as an assigned driver).
+    public LinkedList<IRide> getRideHistory() {
+        return null;
+    }
+    // Returns a formatted string describing this person.
+    @Override
+    public String toString() {
+        return "Person ID =" + id + ", Name='" + name + "', PhoneNumber='" + phoneNumber + "'}";
+    }
 }

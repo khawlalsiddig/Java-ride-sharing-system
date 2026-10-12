@@ -1,19 +1,19 @@
 class Node<T>{
     T data;
-    Node next;
+    Node<T> next;
 
     public Node() {
         data = null;
         next = null;
     }
-    public Node(T data, Node next) {
+    public Node(T data, Node<T> next) {
         this.data = data;
         this.next = next;
     }
 }
 
 public class LinkedList<T> {
-    Node head;
+    Node<T> head;
     int size;
 
     public LinkedList() {
@@ -25,7 +25,9 @@ public class LinkedList<T> {
         return size;
     }
 
-
+public Node<T> getHead() {
+        return head;
+    }
 
 
 
