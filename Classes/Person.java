@@ -1,8 +1,9 @@
 public abstract class Person implements IPerson {
-    private int id;
+    private final int id;
     private String name;
     private String phoneNumber;
-    
+    private LinkedList<IRide> rideHistory;
+
 
     //Person constructor
     protected Person(int id, String name, String phoneNumber) {
@@ -41,7 +42,7 @@ public abstract class Person implements IPerson {
     }
     //return the list of rides associated with this person (as a rider, or as an assigned driver).
     public LinkedList<IRide> getRideHistory() {
-        return null;
+        return rideHistory ;
     }
     // Returns a formatted string describing this person.
     @Override

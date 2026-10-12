@@ -7,7 +7,29 @@ public class RiderList implements IRiderList {
     }
 
     // Inserts a rider into the list in sorted order by ID. If a rider with the same ID already exists, insertion fails.
-    boolean add(IRider rider);
+    boolean add(IRider rider) {
+        if (rider == null) {
+            throw new IllegalArgumentException("Enter a valid rider");
+        }
+        for (int i = 0; i < riders.size(); i++) {
+            if (riders.get(i).compareTo(rider) == 0) {
+                return false; // Rider with the same ID already exists
+            }
+            else if(riders.get(0).compareTo(rider) > 0) {
+                // Insert at the beginning
+                return true;
+            }
+            else if (riders.get(riders.size() - 1).compareTo(rider) < 0) {
+                // Insert at the end
+                return true;
+            }
+            else if (riders.get(i-1).compareTo(rider) < 0 && riders.get(i).compareTo(rider) > 0) {
+                 // Insert at the correct position
+                return true;
+            }
+        }
+        
+    }
 
     //Searches for a rider by ID.
     IRider findById(int riderId);
