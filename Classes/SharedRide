@@ -1,0 +1,24 @@
+public class SharedRide extends Ride implements ISharedRide{
+
+ private LinkedList<IRider> participants;
+
+   public SharedRide(String pickupLocation, IDateTime pickupTime,
+                      IDateTime dropoffTime, String dropoffLocation,
+                       IDriver driver) {
+        super(pickupLocation, pickupTime, dropoffTime, dropoffLocation, driver);
+        this.participants = new LinkedList<IRider>();
+    }
+
+   
+   public boolean hasRider(int riderId){
+    participants.findFirst();
+    while (!participants.last()){
+        if (participants.retrieve().getId() == riderId)
+            return true;
+        participants.findNext();
+   }
+   if (participants.retrieve().getId() == riderId)
+            return true;
+        
+return false;
+}
