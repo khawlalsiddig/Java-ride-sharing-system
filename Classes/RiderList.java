@@ -1,3 +1,4 @@
+
 public class RiderList implements IRiderList {
 
     private LinkedList<IRider> riders;
@@ -6,67 +7,235 @@ public class RiderList implements IRiderList {
         riders = new LinkedList<IRider>();
     }
 
-    // Inserts a rider into the list in sorted order by ID. If a rider with the same ID already exists, insertion fails.
+
+    // Add rider in ascending order by ID
     public boolean add(IRider rider) {
-        if (rider == null) {
-            throw new IllegalArgumentException("Enter a valid rider");
+    if (rider == null) return false;
+    if (riders.empty()) {
+        riders.insert(rider);
+        return true;
+    }
+    riders.findFirst();
+    while (!riders.last() && riders.retrieve().getId() < rider.getId())
+        riders.findNext();
+    int curId = riders.retrieve().getId();
+    if (curId == rider.getId()) return false;
+    if (curId < rider.getId()) {
+        // current is the last node and smaller: append
+        riders.insert(rider);
+    } else {
+        // current is bigger: put rider here, push old one after it
+        IRider old = riders.retrieve();
+        riders.update(rider);
+        riders.insert(old);
+    }
+    return true;
+}
+
+    // Find all riders with the given name
+    public LinkedList<IRider> findByName(String fullName) {
+        LinkedList<IRider> result = new LinkedList<IRider>();
+
+        if (riders.empty())
+            return result;
+
+        riders.findFirst();
+
+        while (true) {
+            if (riders.retrieve().getName().equals(fullName))
+                result.add(riders.retrieve());
+
+            if (riders.last())
+                break;
+
+            riders.findNext();
         }
-        for (int i = 0; i < riders.getSize(); i++) {
-            if (riders.get(i).compareTo(rider) == 0) {
-                return false; // Rider with the same ID already exists
-            }
-            else if(riders.get(0).compareTo(rider) > 0) {
-                // Insert at the beginning
-                return true;
-            }
-            else if (riders.get(riders.getSize() - 1).compareTo(rider) < 0) {
-                // Insert at the end
-                return true;
-            }
-            else if (riders.get(i-1).compareTo(rider) < 0 && riders.get(i).compareTo(rider) > 0) {
-                 // Insert at the correct position
-                return true;
-            }
-        }
-        
+
+        return result;
     }
 
-    //Searches for a rider by ID.
-    IRider findById(int riderId);
+    // Find rider by email
+    public IRider findByEmail(String email) {
+        if (riders.empty())
+            return null;
 
-    // Searches for all riders with the given full name.
-    LinkedList<IRider> findByName(String fullName);
+        riders.findFirst();
 
-    //Searches for a rider by email address.
-    IRider findByEmail(String email);
+        while (true) {
+            if (riders.retrieve().getEmail().equals(email))
+                return riders.retrieve();
 
-    //Returns all riders from the specified home city.
-    LinkedList<IRider> findByHomeCity(String homeCity);
+            if (riders.last())
+                break;
 
-    //Returns all riders in the linked list.
-    LinkedList<IRider> getAll();
+            riders.findNext();
+        }
 
-    //Removes a rider by ID. Returns true if a rider with that ID was found and removed; false otherwise.
-    boolean removeById(int riderId);
+        return null;
+    }
 
-    //Removes a rider by email address. Returns true if a rider with that email was found and removed; false otherwise.
-    boolean removeByEmail(String email);
+    // Find rider by ID
+    public IRider findById(int riderId) {
+        if (riders.empty())
+            return null;
 
-    /**
-     * Name and home city are not unique, so more than one rider may match.
-     * Removes every rider whose full name exactly matches the given name
-     * (the same full-name equality used by findByName), not a first-name-only
-     * or partial match.
-     * Returns the number of riders removed (0 if none matched).
-     */
-    int removeByName(String fullName);
+        riders.findFirst();
+        while (true) {
+            IRider rider = riders.retrieve();
+            if (rider.getId() == riderId)
+                return rider;
 
-    /**
-     * Removes every rider from the specified home city.
-     * Returns the number of riders removed (0 if none matched).
-     */
-    int removeByHomeCity(String homeCity);
+            if (riders.last())
+                break;
 
-    //return the total number of riders stored.
-    int size();
+            riders.findNext();
+        }
+
+        return null;
+    }
+
+    // Find all riders from a home city
+    public LinkedList<IRider> findByHomeCity(String homeCity) {
+        LinkedList<IRider> result = new LinkedList<IRider>();
+
+        if (riders.empty())
+            return result;
+
+        riders.findFirst();
+
+        while (true) {
+            if (riders.retrieve().getHomeCity().equals(homeCity))
+                result.add(riders.retrieve());
+
+            if (riders.last())
+                break;
+
+            riders.findNext();
+        }
+
+        return result;
+    }
+
+    // Return all riders
+    public LinkedList<IRider> getAll() {
+        return riders;
+    }
+
+    // Remove rider by ID
+    public boolean removeById(int riderId) {
+        if (riders.empty())
+            return false;
+
+        riders.findFirst();
+
+        while (true) {
+            if (riders.retrieve().getId() == riderId) {
+                riders.remove();
+                return true;
+            }
+
+            if (riders.last())
+                break;
+
+            riders.findNext();
+        }
+
+        return false;
+    }
+
+    // Remove rider by email
+    public boolean removeByEmail(String email) {
+        if (riders.empty())
+            return false;
+
+        riders.findFirst();
+
+        while (true) {
+            if (riders.retrieve().getEmail().equals(email)) {
+                riders.remove();
+                return true;
+            }
+
+            if (riders.last())
+                break;
+
+            riders.findNext();
+        }
+
+        return false;
+    }
+
+    // Remove all riders with the given name
+    public int removeByName(String fullName) {
+    int count = 0;
+
+    if (riders.empty())
+        return 0;
+
+    riders.findFirst();
+
+    while (true) {
+        if (riders.retrieve().getName().equals(fullName)) {
+            riders.remove();
+            count++;
+
+            if (riders.empty())
+                break;
+        } else {
+            if (riders.last())
+                break;
+
+            riders.findNext();
+        }
+    }
+
+    return count;
+}
+
+public int removeByHomeCity(String homeCity) {
+    int count = 0;
+
+    if (riders.empty())
+        return 0;
+
+    riders.findFirst();
+
+    while (true) {
+        if (riders.retrieve().getHomeCity().equals(homeCity)) {
+            riders.remove();
+            count++;
+
+            if (riders.empty())
+                break;
+        } else {
+            if (riders.last())
+                break;
+
+            riders.findNext();
+        }
+    }
+
+    return count;
+}
+
+    // Return the number of riders
+    public int size() {
+        int count = 0;
+
+        if (riders.empty())
+            return 0;
+
+        riders.findFirst();
+
+        while (true) {
+            count++;
+
+            if (riders.last())
+                break;
+
+            riders.findNext();
+        }
+
+        return count;
+    }
 }
