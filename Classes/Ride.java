@@ -78,8 +78,8 @@ public abstract class Ride implements IRide  {
     
     public String toString() {
         return "Ride #" + rideId
-                + " | " + pickupLocation + " (" + pickupTime.format() + ")"
+                + "\n" + pickupLocation + " (" + pickupTime.format() + ")"
                 + " -> " + dropoffLocation + " (" + dropoffTime.format() + ")"
-                + " | Driver: " + driver.getName() + " (ID " + driver.getId() + ")";
+                + "\n" + "Driver: " + driver.getName() + " (ID " + driver.getId() + ")";
     }
 }
