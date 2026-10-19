@@ -6,108 +6,72 @@ class Node<T>{
         data = null;
         next = null;
     }
-    public Node(T data, Node<T> next) {
+    public Node(T data) {
         this.data = data;
-        this.next = next;
+        this.next = null;
     }
 }
 
 public class LinkedList<T> {
-    Node<T> head;
-    int size;
+    Node<T> head, current;
 
     public LinkedList() {
         head = null;
-        size = 0;
+        current = null;
     }
 
-    public int size() {
-        return size;
+    public void findFirst() {
+        current = head;
     }
-
-    public Node<T> getHead() {
-        return head;
+   
+    public void findNext() {
+        current = current.next;
     }
-public boolean isEmpty() {
-        return size == 0;
-    }
-
-    // Insert an element at the end
-    public void add(T data) {
-        add(size, data);
-    }
-
-    // Insert an element at a specific index
-    public void add(int index, T data) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException();
-        }
-
-        Node<T> n = new Node<>(data, null);
-
-        // Insert at the beginning
-        if (index == 0) {
-            n.next = head;
-            head = n;
-        } else {
-            Node<T> current = head;
-
-            // Find the node before the insertion position
-            for (int i = 0; i < index - 1; i++) {
-                current = current.next;
-            }
-
-            n.next = current.next;
-            current.next = n;
-        }
-
-        size++;
-    }
-
-    // Get the element at a specific index
-    public T get(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException();
-        }
-
-        Node<T> current = head;
-
-        for (int i = 0; i < index; i++) {
-            current = current.next;
-        }
-
+   
+    public T retrieve() {
         return current.data;
     }
-
-    // Remove and return the element at an index
-    public T remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException();
-        }
-
-        Node<T> node;
-
-        if (index == 0) {
-            node = head;
-            head = head.next;
-        } else {
-            Node<T> current = head;
-
-            for (int i = 0; i < index - 1; i++) {
-                current = current.next;
-            }
-
-            node = current.next;
-            current.next = node.next;
-        }
-
-        size--;
-        return node.data;
+   
+    public void update(T e) {
+        current.data = e;
     }
-
-    // Remove all elements
-    public void clear() {
-        head = null;
-        size = 0;
+   
+   public void insert(T e){
+       Node<T> n = new Node(e);
+        if (head == null) {
+            head = current = n;
+      } else {
+            n.next = current.next;
+            current.next = n;
+            current = current.next;
+      }
     }
+    public void remove( ){
+        if(current == head) head  = head.next;
+        else {
+
+            Node<T> temp = head;
+            while (temp.next != current)
+                temp = temp.next;
+            temp.next = current.next;
+        }
+      if (current.next != null) current = current.next;
+      else current = head;
+   }
+
+   
+   public boolean full() {
+       return false;
+}
+
+public boolean empty() {
+    return head == null;
+}
+    
+   public boolean last(){
+      return current.next == null;
+   }
+
+
+
 }
