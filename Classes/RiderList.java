@@ -7,11 +7,11 @@ public class RiderList implements IRiderList {
     }
 
     // Inserts a rider into the list in sorted order by ID. If a rider with the same ID already exists, insertion fails.
-    boolean add(IRider rider) {
+    public boolean add(IRider rider) {
         if (rider == null) {
             throw new IllegalArgumentException("Enter a valid rider");
         }
-        for (int i = 0; i < riders.size(); i++) {
+        for (int i = 0; i < riders.getSize(); i++) {
             if (riders.get(i).compareTo(rider) == 0) {
                 return false; // Rider with the same ID already exists
             }
@@ -19,7 +19,7 @@ public class RiderList implements IRiderList {
                 // Insert at the beginning
                 return true;
             }
-            else if (riders.get(riders.size() - 1).compareTo(rider) < 0) {
+            else if (riders.get(riders.getSize() - 1).compareTo(rider) < 0) {
                 // Insert at the end
                 return true;
             }
