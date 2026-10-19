@@ -9,6 +9,7 @@ public class SharedRide extends Ride implements ISharedRide{
         this.participants = new LinkedList<IRider>();
     }
 
+// Should I copy it?
     public LinkedList<IRider> getParticipants(){
     return participants;
    }

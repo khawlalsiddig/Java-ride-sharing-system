@@ -5,7 +5,7 @@ public class RideList implements IRideList {
 
     public boolean addRide (IRide ride){
    
-    if (ride == null || hasRide(ride.getRideId()))
+    if (ride == null || ride.hasRider(ride.getRideId()))
         return false;
     
     if (rides.empty()){
@@ -51,7 +51,7 @@ public class RideList implements IRideList {
     }
 
 
-     public LinkedList<IRide> getAllAlphabetically() {
+    public LinkedList<IRide> getAllAlphabetically() {
         LinkedList<IRide> list = new LinkedList<IRide>(); //Return a copy of the LinkedList rides
         if (rides.empty())
             return list;
@@ -86,7 +86,7 @@ public class RideList implements IRideList {
         return list;
     }
 
-      public LinkedList<IRide> findByRiderName(String riderFullName) {
+    public LinkedList<IRide> findByRiderName(String riderFullName) {
         LinkedList<IRide> list = new LinkedList<IRide>();
         if (riderFullName == null || rides.empty())
             return list;
@@ -104,14 +104,35 @@ public class RideList implements IRideList {
         return list;
     }
 
-     private boolean hasRiderNamed(IRide ride, String fullName) {
-        if (ride instanceof IPrivateRide) {
+    private boolean hasRiderNamed(IRide ride, String fullName) {
+        if (ride instanceof IPrivateRide) { //For private Ride
             return ((IPrivateRide) ride).getRider().getName().equals(fullName);
         }
+        
+        if (ride instanceof SharedRide){  //For Shared Ride
+        LinkedList<IRider> riders = ((ISharedRide) ride).getParticipants();
+        if (riders.empty())
+            return false;
 
+
+        riders.findFirst();
+        while (true) {
+            if (riders.retrieve().getName().equals(fullName)) 
+                return true;
+                
+            if (riders.last()) 
+                break;
+            
+            riders.findNext();
+            }
+        }
+        return false;
     
+    }
 
-
+    public int size() {
+        return count;
+    }
 }
 
 
