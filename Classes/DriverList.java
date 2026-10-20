@@ -1,4 +1,3 @@
-
 public class DriverList implements IDriverList {
 
     private final LinkedList<IDriver> drivers = new LinkedList<IDriver>();

@@ -1,12 +1,7 @@
 public abstract class Ride implements IRide  {
 
-<<<<<<< HEAD
-    private static int nextRideId = 1;              // unique internal ride ID
-    private final int rideId;
-=======
     private static int nextRideId = 1;      // shared counter: next ID to hand out
      private final int rideId;               // unique internal ride ID (immutable)
->>>>>>> 44ef1db72f09c494fc0cee0ffb7f622330b96d88
     private String pickupLocation;
     private String dropoffLocation;
     private final IDateTime pickupTime;     // immutable

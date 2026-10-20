@@ -5,14 +5,14 @@ import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class RideSharingSystem implements IRideSharingSystem {
-    private LinkedList<IRider> riders;
-    private LinkedList<IDriver> drivers;
-    private LinkedList<IRide> rides;
+    private RiderList riders;
+    private DriverList drivers;
+    private RideList rides;
 
     public RideSharingSystem() {
-        riders = new LinkedList<>();
-        drivers = new LinkedList<>();
-        rides = new LinkedList<>();
+        riders = new RiderList();
+        drivers = new DriverList();
+        rides = new RideList();
     }
     
 	// Loads riders from a CSV file.
