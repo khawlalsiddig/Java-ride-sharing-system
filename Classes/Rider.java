@@ -27,4 +27,9 @@ public class Rider extends Person implements IRider {
     public int compareTo(IRider other) {
         return Integer.compare(this.getId(), other.getId());
     }
+
+    public String toString() {
+        return super.toString() + ", email='" + email + '\'' +
+                ", homeCity='" + homeCity + '\'';
+    }
 }

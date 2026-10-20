@@ -78,13 +78,10 @@ public class RideSharingSystem implements IRideSharingSystem {
                 IDateTime pickupTime = new DateTime(parts[1].trim());
                 IDateTime dropoffTime = new DateTime(parts[2].trim());
                 String dropoffLocation = parts[3].trim();
-                int riderId = Integer.parseInt(parts[4].trim());
-                int driverId = Integer.parseInt(parts[5].trim());
+                int driverId = Integer.parseInt(parts[4].trim());
+                int riderId = Integer.parseInt(parts[5].trim());
 
-                IRider rider = searchRiderById(riderId);
-                IDriver driver = searchDriverById(driverId);
-                if (rider == null || driver == null) return false;
-// مشكلة ال constructor
+                
                 if (!schedulePrivateRide(pickupLocation, pickupTime, dropoffTime, dropoffLocation, riderId, driverId)) return false;
             }
             return true;
@@ -134,7 +131,7 @@ public class RideSharingSystem implements IRideSharingSystem {
 
     //Returns all riders stored in the system.
     public LinkedList<IRider> getAllRiders() {
-        return riders;
+        return riders.getAllRiders();
     }
 
     //Searches for a driver by ID.

@@ -4,12 +4,12 @@ public abstract class Person implements IPerson {
     private String phoneNumber;
     private LinkedList<IRide> rideHistory;
 
-
     //Person constructor
     protected Person(int id, String name, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.rideHistory = new LinkedList<>();
     }
     
     //return the unique ID of this person.
@@ -41,9 +41,10 @@ public abstract class Person implements IPerson {
         this.phoneNumber = phoneNumber;
     }
     //return the list of rides associated with this person (as a rider, or as an assigned driver).
-    public LinkedList<IRide> getRideHistory() {
-        return rideHistory ;
+     public LinkedList<IRide> getRideHistory() {
+        return rideHistory;
     }
+
     // Returns a formatted string describing this person.
     @Override
     public String toString() {
