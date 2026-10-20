@@ -1,6 +1,7 @@
 public abstract class Ride implements IRide  {
 
     private static int nextRideId = 1;              // unique internal ride ID
+    private final int rideId;
     private String pickupLocation;
     private String dropoffLocation;
     private final IDateTime pickupTime;     // immutable

@@ -1,7 +1,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.Driver;
+import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class RideSharingSystem implements IRideSharingSystem {
@@ -18,46 +18,23 @@ public class RideSharingSystem implements IRideSharingSystem {
 	// Loads riders from a CSV file.
 	// Returns true if loading succeeds; false otherwise.
     public boolean loadRidersFromCSV(String ridersFilePath) {
-    try {
-        Scanner scanner = new Scanner(new File(ridersFilePath));
-
-        // Skip the header
-        if (scanner.hasNextLine()) {
-            scanner.nextLine();
-        }
-
-        while (scanner.hasNextLine()) {
-
-            String line = scanner.nextLine();
-
-            if (line.trim().isEmpty()) {
-                continue;
+        try (Scanner scanner = new Scanner(new File(ridersFilePath))) {
+            if (scanner.hasNextLine()) scanner.nextLine(); // header
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine().trim();
+                if (line.isEmpty()) continue;
+                String[] parts = line.split(",", -1);
+                if (parts.length < 5) return false;
+                int riderId = Integer.parseInt(parts[0].trim());
+                IRider rider = new Rider(riderId, parts[1].trim(), parts[2].trim(),
+                        parts[3].trim(), parts[4].trim());
+                if (!addRider(rider)) return false;
             }
-
-            String[] parts = line.split(",");
-
-            int riderId = Integer.parseInt(parts[0]);
-            String name = parts[1];
-            String email = parts[2];
-            String phoneNumber = parts[3];
-            String homeCity = parts[4];
-
-            Rider rider = new Rider(riderId,name,email,phoneNumber,homeCity);
-            riders.add(rider);
+            return true;
+        } catch (FileNotFoundException | NumberFormatException e) {
+            return false;
         }
-
-        scanner.close();
-        return true;
-
-    } catch (FileNotFoundException e) {
-        System.out.println("File not found: " + ridersFilePath);
-    } catch (NumberFormatException e) {
-        System.out.println("Invalid rider ID in CSV file.");
-    } catch (ArrayIndexOutOfBoundsException e) {
-        System.out.println("Invalid rider CSV format.");
     }
-    return false;
-}
 
 	// Loads drivers from a CSV file.
 	// Returns true if loading succeeds; false otherwise.
@@ -69,35 +46,52 @@ public class RideSharingSystem implements IRideSharingSystem {
             String line = scanner.nextLine();
             if (line.trim().isEmpty()) continue;
 
-            String[] parts = line.split(",");
+            String[] parts = line.split(",", -1);
+            if (parts.length < 5) return false;
             int driverId = Integer.parseInt(parts[0].trim());
             String name = parts[1].trim();
             String email = parts[2].trim();
             String plate = parts[3].trim();
             VehicleType type = VehicleType.valueOf(parts[4].trim().toUpperCase());
 
-            Driver driver = new Driver(driverId, name, email, plate, type);
+            IDriver driver = new Driver(driverId, name, email, plate, type);
             if (!addDriver(driver)) return false;   // duplicate ID or plate
         }
         return true;
 
-    } catch (FileNotFoundException e) {
-        System.out.println("File not found: " + driversFilePath);
-    } catch (NumberFormatException e) {
-        System.out.println("Invalid driver ID in CSV file.");
-    } catch (ArrayIndexOutOfBoundsException e) {
-        System.out.println("Invalid driver CSV format.");
-    } catch (IllegalArgumentException e) {
-        System.out.println("Invalid vehicle type in CSV file.");
-    }
-    return false;
+    } catch (FileNotFoundException | NumberFormatException e) {
+            return false;
+        }
 }
         
 
 	// Loads rides from a CSV file. All referenced riders and the assigned driver must already exist. It must enforce conflict rules
 	// Returns true if loading succeeds; false otherwise.
     public boolean loadRidesFromCSV(String ridesFilePath) {
+        try (Scanner scanner = new Scanner(new File(ridesFilePath))) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine().trim();
+                if (line.isEmpty()) continue;
+                String[] parts = line.split(",", -1);
+                if (parts.length < 6) return false;
+                String pickupLocation = parts[0].trim();
+                IDateTime pickupTime = new DateTime(parts[1].trim());
+                IDateTime dropoffTime = new DateTime(parts[2].trim());
+                String dropoffLocation = parts[3].trim();
+                int riderId = Integer.parseInt(parts[4].trim());
+                int driverId = Integer.parseInt(parts[5].trim());
 
+                IRider rider = searchRiderById(riderId);
+                IDriver driver = searchDriverById(driverId);
+                if (rider == null || driver == null) return false;
+// مشكلة ال constructor
+                if (!schedulePrivateRide(pickupLocation, pickupTime, dropoffTime, dropoffLocation, riderId, driverId)) return false;
+            }
+            return true;
+        } 
+        catch (FileNotFoundException | NumberFormatException e) {
+            return false;
+        }
     }
 
     
@@ -113,9 +107,10 @@ public class RideSharingSystem implements IRideSharingSystem {
      * Returns true if added; false if duplicate ID, duplicate plate, or invalid
      */
     public boolean addDriver(IDriver driver) {
-        // اتاكدي من موضوع ال plate number uniqueness
-        return drivers.add(driver);   // add() already rejects duplicate IDs
+        return drivers.add(driver);
     }    
+
+    
 
     //Searches for a rider by ID.
     public IRider searchRiderById(int riderId) {
@@ -139,7 +134,7 @@ public class RideSharingSystem implements IRideSharingSystem {
 
     //Returns all riders stored in the system.
     public LinkedList<IRider> getAllRiders() {
-        return riders.getAll();
+        return riders;
     }
 
     //Searches for a driver by ID.
@@ -154,11 +149,11 @@ public class RideSharingSystem implements IRideSharingSystem {
     }
 
     //Searches for all drivers with the specified vehicle type.
-    LinkedList<IDriver> searchDriversByVehicleType(VehicleType vehicleType);
+    public LinkedList<IDriver> searchDriversByVehicleType(VehicleType vehicleType) { return null; }
 
     //Returns all drivers stored in the system.
-    LinkedList<IDriver> getAllDrivers() {
-        return drivers.getAll();
+    public LinkedList<IDriver> getAllDrivers() {
+        return drivers;
     }
 
     /**
@@ -168,7 +163,7 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - Shared rides with no remaining participants are deleted.
      * It returns true if the rider was found and removed; false otherwise
      */
-    boolean removeRider(int riderId);
+    public boolean removeRider(int riderId) { return false; }
 
     /**
      * Removes a driver and performs cascade deletion of their assigned rides:
@@ -176,7 +171,7 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - All shared rides assigned to the driver are deleted.
      * It returns true if the driver was found and removed; false otherwise
      */
-    boolean removeDriver(int driverId);
+    public boolean removeDriver(int driverId) { return false; }
 
     /**
      * Schedules a private ride for one rider with one driver.
@@ -187,7 +182,7 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - The ride must not conflict with the driver's current schedule.
      * It returns true if scheduled; false otherwise
      */
-    boolean schedulePrivateRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int riderId, int driverId);
+    public boolean schedulePrivateRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int riderId, int driverId) { return false; }
 
     /**
      * Schedules a shared ride for multiple riders with one driver.
@@ -198,17 +193,17 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - The ride must not conflict with the driver's current schedule.
      * It returns true if scheduled; false otherwise
      */
-    boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId);
+    public boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId) { return false; }
 
     //Searches for all rides whose pickup location matches the given location (may return multiple if pickup locations repeat).
-    LinkedList<IRide> searchRidesByPickupLocation(String pickupLocation);
+    public LinkedList<IRide> searchRidesByPickupLocation(String pickupLocation) { return null; }
 
     //Searches for all rides that involve a rider with the given name.
-    LinkedList<IRide> searchRidesByRiderName(String riderName);
+    public LinkedList<IRide> searchRidesByRiderName(String riderName) { return null; }
 
     //Returns all riders registered on a shared ride identified by its pickup location.
-    LinkedList<IRider> getSharedRideParticipants(String pickupLocation);
+    public LinkedList<IRider> getSharedRideParticipants(String pickupLocation) { return null; }
 
     //Returns all rides (private and shared) alphabetically ordered by pickup location.
-    LinkedList<IRide> getAllRidesAlphabetically();
+    public LinkedList<IRide> getAllRidesAlphabetically() { return null; }
 }
