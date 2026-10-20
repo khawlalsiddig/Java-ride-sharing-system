@@ -2,9 +2,8 @@ public class RideList implements IRideList {
   private final LinkedList<IRide> rides = new LinkedList<IRide>();
   private int count = 0;
   
-
+    //Adds a ride and maintains alphabetical ordering by pickup location.
     public boolean addRide (IRide ride){
-   
     if (ride == null || ride.hasRider(ride.getRideId()))
         return false;
     
@@ -32,6 +31,7 @@ public class RideList implements IRideList {
         return true;
     }
  
+    //Removes a ride by its unique ride ID.
     public boolean removeRideById(int rideId) {
         if (rides.empty())
             return false;
@@ -51,6 +51,7 @@ public class RideList implements IRideList {
     }
 
 
+    //Returns all rides alphabetically ordered by pickup location.
     public LinkedList<IRide> getAllAlphabetically() {
         LinkedList<IRide> list = new LinkedList<IRide>(); //Return a copy of the LinkedList rides
         if (rides.empty())
@@ -67,6 +68,7 @@ public class RideList implements IRideList {
         return list;
     }
 
+     //Returns all rides whose pickup location matches the given location.
     public LinkedList<IRide> findByPickupLocation(String pickupLocation) {
         LinkedList<IRide> list = new LinkedList<IRide>();
         if (pickupLocation == null || rides.empty()) 
@@ -86,6 +88,7 @@ public class RideList implements IRideList {
         return list;
     }
 
+    //Returns all rides that involve a rider with the given full name.
     public LinkedList<IRide> findByRiderName(String riderFullName) {
         LinkedList<IRide> list = new LinkedList<IRide>();
         if (riderFullName == null || rides.empty())
@@ -104,6 +107,7 @@ public class RideList implements IRideList {
         return list;
     }
 
+   //Private method that return true if the Rider exesit in Ride
     private boolean hasRiderNamed(IRide ride, String fullName) {
         if (ride instanceof IPrivateRide) { //For private Ride
             return ((IPrivateRide) ride).getRider().getName().equals(fullName);
@@ -130,6 +134,7 @@ public class RideList implements IRideList {
     
     }
 
+    //return number of rides stored.
     public int size() {
         return count;
     }
