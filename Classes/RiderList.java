@@ -43,7 +43,7 @@ public class RiderList implements IRiderList {
 
         while (true) {
             if (riders.retrieve().getName().equals(fullName))
-                result.add(riders.retrieve());
+                result.insert(riders.retrieve());
 
             if (riders.last())
                 break;
@@ -105,7 +105,7 @@ public class RiderList implements IRiderList {
 
         while (true) {
             if (riders.retrieve().getHomeCity().equals(homeCity))
-                result.add(riders.retrieve());
+                result.insert(riders.retrieve());
 
             if (riders.last())
                 break;

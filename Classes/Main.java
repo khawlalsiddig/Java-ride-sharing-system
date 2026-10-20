@@ -6,11 +6,11 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        // RideSharingSystem system = new RideSharingSystem();
-
-        // system.loadRidersFromCSV("riders 100.csv");
-        // system.loadDriversFromCSV("drivers 30.csv");
-        // system.loadRidesFromCSV("rides 40.csv");
+        RideSharingSystem system = new RideSharingSystem(); 
+        // موضوع انها تدينا false لو فيه مشكلة في تحميل البيانات من الملفات
+         system.loadRidersFromCSV("riders 100.csv");
+         system.loadDriversFromCSV("drivers 30.csv");
+         system.loadRidesFromCSV("rides 40.csv");
 
         int choice;
 
