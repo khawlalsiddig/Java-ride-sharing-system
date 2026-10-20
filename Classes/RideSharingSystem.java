@@ -187,7 +187,8 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - The ride must not conflict with the driver's current schedule.
      * It returns true if scheduled; false otherwise
      */
-    boolean schedulePrivateRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int riderId, int driverId);
+    public boolean schedulePrivateRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int riderId, int driverId);
+    
 
     /**
      * Schedules a shared ride for multiple riders with one driver.
@@ -198,17 +199,40 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - The ride must not conflict with the driver's current schedule.
      * It returns true if scheduled; false otherwise
      */
-    boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId);
+    public boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId);
+
 
     //Searches for all rides whose pickup location matches the given location (may return multiple if pickup locations repeat).
-    LinkedList<IRide> searchRidesByPickupLocation(String pickupLocation);
+    public LinkedList<IRide> searchRidesByPickupLocation(String pickupLocation){
+         return rides.findByPickupLocation(pickupLocation);
+    }
 
     //Searches for all rides that involve a rider with the given name.
-    LinkedList<IRide> searchRidesByRiderName(String riderName);
+    public LinkedList<IRide> searchRidesByRiderName(String riderName){
+        return rides.findByRiderName(riderName);
+    }
 
     //Returns all riders registered on a shared ride identified by its pickup location.
-    LinkedList<IRider> getSharedRideParticipants(String pickupLocation);
+    public LinkedList<IRider> getSharedRideParticipants(String pickupLocation){
+        LinkedList<IRide> matches = rides.findByPickupLocation(pickupLocation);
+
+         if (!matches.empty()) {
+            matches.findFirst();
+            while (true) {
+                if (matches.retrieve() instanceof ISharedRide) {
+                    return ((ISharedRide) matches.retrieve()).getParticipants();
+                }
+                if (matches.last()) 
+                    break;
+                matches.findNext();
+            }
+        }
+        return new LinkedList<IRider>();           // nothing found
+    
+    }
 
     //Returns all rides (private and shared) alphabetically ordered by pickup location.
-    LinkedList<IRide> getAllRidesAlphabetically();
+    LinkedList<IRide> getAllRidesAlphabetically(){
+         return rides.getAllAlphabetically();
+    }
 }
