@@ -7,14 +7,20 @@ private static Scanner input = new Scanner(System.in);
 
         RideSharingSystem system = new RideSharingSystem(); 
         // موضوع انها تدينا false لو فيه مشكلة في تحميل البيانات من الملفات
-         system.loadRidersFromCSV("riders 100.csv");
-         system.loadDriversFromCSV("drivers 30.csv");
-         system.loadRidesFromCSV("rides 40.csv");
+         if (!system.loadRidersFromCSV("riders 100.csv")) {
+             System.out.println("Error loading riders data.");
+         }
+         if (!system.loadDriversFromCSV("drivers 30.csv")) {
+             System.out.println("Error loading drivers data.");
+         }
+         if (!system.loadRidesFromCSV("rides 40.csv")) {
+             System.out.println("Error loading rides data.");
+         }
 
         int choice;
 
         do {
-            System.out.println("\n=== Ride Sharing System ===");
+            System.out.println("\n===== Ride Sharing System =====");
             System.out.println("1. List all riders");
             System.out.println("2. Search riders by home city");
             System.out.println("3. Search riders by name");
@@ -35,23 +41,31 @@ private static Scanner input = new Scanner(System.in);
 
             switch (choice) {
                 case 1:
-                    // Call getAllRiders()
-                    // Print the returned list.
+                    printList(system.getAllRiders(), "No riders found.");
                     break;
 
                 case 2:
-                    // Read a home city.
-                    // Call searchRidersByHomeCity().
+                    System.out.print("Home city: ");
+                    String homeCity = input.nextLine();
+                    printList(system.searchRidersByHomeCity(homeCity), "No riders found in that city.");
                     break;
 
                 case 3:
-                    // Read a full name.
-                    // Call searchRidersByName().
+                    System.out.print("Rider's full name: ");
+                    String name = input.nextLine();
+                    printList(system.searchRidersByName(name), "No riders found with that name.");
                     break;
 
                 case 4:
-                    // Read rider fields, construct Rider,
-                    // and call addRider().
+                    
+                    String riderHomeCity = readText("Home city: ");
+                    String riderName = readText("Full name: ");
+                    String phoneNumber = readText("Phone number: ");
+                    String email = readText("Email: ");
+                    int riderId = readInt("Rider ID: ");
+
+                    system.addRider(new Rider(riderId, riderName, riderHomeCity, phoneNumber, email));
+                    System.out.println("Rider added successfully.");
                     break;
 
                 case 5:
