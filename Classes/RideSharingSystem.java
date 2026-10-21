@@ -186,7 +186,7 @@ public class RideSharingSystem implements IRideSharingSystem {
      */
     public boolean schedulePrivateRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int riderId, int driverId) {
            //pickupTime before dropoffTime
-        if(pickupTime == null && dropoffTime == null && pickupTime.compareTo(dropoffTime) > 0)
+        if(pickupTime == null || dropoffTime == null || pickupTime.compareTo(dropoffTime) > 0)
             return false;
            //rider and driver existence checks frist
         IRider rider = riders.findById(riderId);       
@@ -221,11 +221,11 @@ public class RideSharingSystem implements IRideSharingSystem {
      */
     public boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId){
            //pickupTime before dropoffTime
-        if(riderIds == null || riderIds.length <=1 || pickupTime == null && dropoffTime == null && pickupTime.compareTo(dropoffTime) > 0)
+        if(riderIds == null || riderIds.length <=1 || pickupTime == null || dropoffTime == null || pickupTime.compareTo(dropoffTime) > 0)
             return false;
 
            //riders and driver existence checks frist
-        IRider[] ridersList = new IRider[riderIds];
+        IRider[] ridersList = new IRider[riderIds.length];
 
         for(int i=0; i<riderIds.length; i++){
         IRider rider = riders.findById(riderIds[i]);
@@ -269,7 +269,7 @@ public class RideSharingSystem implements IRideSharingSystem {
     //Usefull private methods for Conflict detection 
     //---------------------------------------------------------------------------
     private boolean overlaps(IDateTime pickOld, IDateTime dropOld, IDateTime pickNew, IDateTime dropNew) {
-        return pickOld.compareTo(dropNew) < 0 && PickNew.compareTo(dropOld)< 0;
+        return pickOld.compareTo(dropNew) < 0 && pickNew.compareTo(dropOld)< 0;
     }
 
     private boolean hasPrivateConflict(int riderId, int driverId,IDateTime pickup, IDateTime dropoff) {
