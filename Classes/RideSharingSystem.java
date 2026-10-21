@@ -1,7 +1,6 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class RideSharingSystem implements IRideSharingSystem {
@@ -28,7 +27,7 @@ public class RideSharingSystem implements IRideSharingSystem {
                 int riderId = Integer.parseInt(parts[0].trim());
                 IRider rider = new Rider(riderId, parts[1].trim(), parts[2].trim(),
                         parts[3].trim(), parts[4].trim());
-                if (!addRider(rider)) return false;
+                if (!addRider(rider)) continue; // skip duplicates or invalid entries
             }
             return true;
         } catch (FileNotFoundException | NumberFormatException e) {
@@ -55,7 +54,7 @@ public class RideSharingSystem implements IRideSharingSystem {
             VehicleType type = VehicleType.valueOf(parts[4].trim().toUpperCase());
 
             IDriver driver = new Driver(driverId, name, email, plate, type);
-            if (!addDriver(driver)) return false;   // duplicate ID or plate
+            if (!addDriver(driver)) continue;   // skip duplicates or invalid entries
         }
         return true;
 
@@ -65,91 +64,97 @@ public class RideSharingSystem implements IRideSharingSystem {
 }
         
 
-	// Loads rides from a CSV file. All referenced riders and the assigned driver must already exist. It must enforce conflict rules
-	// Returns true if loading succeeds; false otherwise.
-    public boolean loadRidesFromCSV(String ridesFilePath) {
-        try (Scanner scanner = new Scanner(new File(ridesFilePath))) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine().trim();
-                if (line.isEmpty()) continue;
-                String[] parts = line.split(",", -1);
-                if (parts.length < 6) return false;
-                String pickupLocation = parts[0].trim();
-                IDateTime pickupTime = new DateTime(parts[1].trim());
-                IDateTime dropoffTime = new DateTime(parts[2].trim());
-                String dropoffLocation = parts[3].trim();
-                int driverId = Integer.parseInt(parts[4].trim());
-                int riderId = Integer.parseInt(parts[5].trim());
+public boolean loadRidesFromCSV(String ridesFilePath) {
+    try (Scanner scanner = new Scanner(new File(ridesFilePath))) {
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty()) continue;
+            String[] parts = line.split(",", -1);
+            if (parts.length < 7) return false;
 
-                
-                if (!schedulePrivateRide(pickupLocation, pickupTime, dropoffTime, dropoffLocation, riderId, driverId)) return false;
+            String type = parts[0].trim().toUpperCase();
+            String pickupLocation = parts[1].trim();
+            IDateTime pickupTime = new DateTime(parts[2].trim());// يا بارسينغ يا كونستركتر
+            IDateTime dropoffTime = new DateTime(parts[3].trim());
+            String dropoffLocation = parts[4].trim();
+            int driverId = Integer.parseInt(parts[5].trim());
+
+            if (type.equals("PRIVATE")) {
+                // parts[6] is a single rider id
+                int riderId = Integer.parseInt(parts[6].trim());
+                schedulePrivateRide(pickupLocation, pickupTime, dropoffTime,
+                        dropoffLocation, riderId, driverId);
+            } else if (type.equals("SHARED")) {
+                // parts[6] is several ids separated by ';'
+                String[] idsStr = parts[6].trim().split(";");
+                int[] riderIds = new int[idsStr.length];
+                for (int i = 0; i < idsStr.length; i++)
+                    riderIds[i] = Integer.parseInt(idsStr[i].trim());
+                scheduleSharedRide(pickupLocation, pickupTime, dropoffTime,
+                        dropoffLocation, riderIds, driverId);
+            } else {
+                return false; // invalid ride type
             }
-            return true;
-        } 
-        catch (FileNotFoundException | NumberFormatException e) {
-            return false;
+
         }
+        return true;
+    } catch (FileNotFoundException | RuntimeException e) {
+        return false;
     }
+}
 
     
-
-    //Adds a rider to the system after enforcing uniqueness by ID. Returns true if added; false if duplicate ID or invalid
     public boolean addRider(IRider rider) {
         return riders.add(rider);
     }
 
-    /**
-     * Adds a driver to the system after enforcing uniqueness by ID and by
-     * vehicle plate number (no two drivers may share the same plate).
-     * Returns true if added; false if duplicate ID, duplicate plate, or invalid
-     */
+    
     public boolean addDriver(IDriver driver) {
         return drivers.add(driver);
     }    
 
     
-
-    //Searches for a rider by ID.
     public IRider searchRiderById(int riderId) {
         return riders.findById(riderId);
     }
 
-    //Searches for a rider by email.
+
     public IRider searchRiderByEmail(String email) {
         return riders.findByEmail(email);
     }
 
-    //Searches for all riders whose full name exactly matches the given name.
+
     public LinkedList<IRider> searchRidersByName(String fullName) {
         return riders.findByName(fullName);
     }
 
-    //Searches for all riders from the specified home city.
+
     public LinkedList<IRider> searchRidersByHomeCity(String homeCity) {
         return riders.findByHomeCity(homeCity);
     }
 
-    //Returns all riders stored in the system.
+
     public LinkedList<IRider> getAllRiders() {
         return riders.getAll();
     }
 
-    //Searches for a driver by ID.
+
     public IDriver searchDriverById(int driverId) {
         return drivers.findById(driverId);
     }
 
-    //Searches for a driver by vehicle plate.
+
     public IDriver searchDriverByVehiclePlate(String vehiclePlate) {
         return drivers.findByVehiclePlate(vehiclePlate);
-
     }
 
-    //Searches for all drivers with the specified vehicle type.
-    public LinkedList<IDriver> searchDriversByVehicleType(VehicleType vehicleType) { return null; }
 
-    //Returns all drivers stored in the system.
-    public LinkedList<IDriver> getAllDrivers() {
+    public LinkedList<IDriver> searchDriversByVehicleType(VehicleType vehicleType) { 
+        return drivers.findByVehicleType(vehicleType);
+     }
+
+
+     public LinkedList<IDriver> getAllDrivers() {
         return drivers.getAll();
     }
 
@@ -160,7 +165,52 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - Shared rides with no remaining participants are deleted.
      * It returns true if the rider was found and removed; false otherwise
      */
-    public boolean removeRider(int riderId) { return false; }
+    public boolean removeRider(int riderId) {
+    IRider rider = riders.findById(riderId);
+    if (rider == null) return false;
+
+    // copy the rider's history first, because we edit the lists while looping
+    LinkedList<IRide> history = rider.getRideHistory();
+    if (!history.empty()) {
+        history.findFirst();
+        while (true) {
+            IRide ride = history.retrieve();
+
+            if (ride instanceof ISharedRide) {
+                ISharedRide shared = (ISharedRide) ride;
+                shared.removeParticipantById(riderId);          // rider leaves the shared ride
+                if (shared.isEmpty()) {                         // nobody left -> delete the ride
+                    removeFromHistory(shared.getDriver(), shared.getRideId());
+                    rides.removeRideById(shared.getRideId());
+                }
+            } else {                                            // private ride -> delete it
+                removeFromHistory(ride.getDriver(), ride.getRideId());
+                rides.removeRideById(ride.getRideId());
+            }
+
+            if (history.last()) break;
+            history.findNext();
+        }
+    }
+    return riders.removeById(riderId);
+}
+// Removes the ride with the given ID from a person's ride history (ride IDs are unique)
+    private void removeFromHistory(IPerson person, int rideId) {
+        LinkedList<IRide> history = person.getRideHistory();
+        if (history.empty()) return;
+
+        history.findFirst();
+        while (true) {
+            if (history.retrieve().getRideId() == rideId) {
+                history.remove();
+                return;
+            }
+            if (history.last()) return;
+            history.findNext();
+        }
+    }
+
+
 
     /**
      * Removes a driver and performs cascade deletion of their assigned rides:
@@ -168,7 +218,9 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - All shared rides assigned to the driver are deleted.
      * It returns true if the driver was found and removed; false otherwise
      */
-    public boolean removeDriver(int driverId) { return false; }
+    public boolean removeDriver(int driverId) { return false;     }
+
+
 
     /**
      * Schedules a private ride for one rider with one driver.
@@ -199,12 +251,13 @@ public class RideSharingSystem implements IRideSharingSystem {
         } catch (IllegalArgumentException e) {
             return false;
         }
-
         rides.addRide(ride);
-        //Sholud add to the History of driver or rider but I don't know how!!!!
+        //Sholud add to the History of driver or rider but I don't know how!!!! مهم
         return true;
-    
     }
+
+
+
     /**
      * Schedules a shared ride for multiple riders with one driver.
      * Requirements:
@@ -215,7 +268,6 @@ public class RideSharingSystem implements IRideSharingSystem {
      * It returns true if scheduled; false otherwise
      */
     public boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId){
-           //pickupTime before dropoffTime
         if(riderIds == null || riderIds.length <=1 || pickupTime == null || dropoffTime == null || pickupTime.compareTo(dropoffTime) > 0)
             return false;
 
@@ -228,11 +280,11 @@ public class RideSharingSystem implements IRideSharingSystem {
                 return false;
             ridersList[i] =rider;
 
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j < i; j++) {// لي ؟
             if (riderIds[j] == riderIds[i]) //Same rider listed twice
                 return false; }
           }       
-      
+      // لي تاني ؟
         if (ridersList.length<=1) //One rider only is not allowed
             return false;
 
@@ -256,7 +308,7 @@ public class RideSharingSystem implements IRideSharingSystem {
             //Should I add to history?
         }
         rides.addRide(ride);
-        //Should I add to history?
+        //Should I add to history? اي
         return true;
 
     }
@@ -273,7 +325,6 @@ public class RideSharingSystem implements IRideSharingSystem {
         return false;
     
     all.findFirst();
-
     while (true) {
         IRide existing = all.retrieve();
 
@@ -281,13 +332,10 @@ public class RideSharingSystem implements IRideSharingSystem {
             if (existing.getDriver().getId() == driverId || existing.hasRider(riderId))
                 return true;
         }
-
         if (all.last()) 
             break;
-
         all.findNext();
     }
-
     return false;
 }
 
@@ -310,18 +358,14 @@ LinkedList<IRide> all = rides.getAllAlphabetically();
                         return true;
                 }
             }
-
             if (all.last()) 
             break;
-
         all.findNext();
      }
-    
-
     return false;
 }
 
-//---------------------------------------------------------------------------
+
 
     //Searches for all rides whose pickup location matches the given location (may return multiple if pickup locations repeat).
     public LinkedList<IRide> searchRidesByPickupLocation(String pickupLocation){
@@ -349,7 +393,6 @@ LinkedList<IRide> all = rides.getAllAlphabetically();
             }
         }
         return new LinkedList<IRider>();           // nothing found
-    
     }
 
     //Returns all rides (private and shared) alphabetically ordered by pickup location.
