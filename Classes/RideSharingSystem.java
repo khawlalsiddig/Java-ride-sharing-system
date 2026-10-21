@@ -252,7 +252,8 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
             return false;
         }
         rides.addRide(ride);
-        //Sholud add to the History of driver or rider but I don't know how!!!! مهم
+        addToHistory(rider, ride);
+        addToHistory(driver, ride);
         return true;
     }
 
@@ -268,7 +269,7 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
      * It returns true if scheduled; false otherwise
      */
     public boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId){
-        if(riderIds == null || riderIds.length <=1 || pickupTime == null || dropoffTime == null || pickupTime.compareTo(dropoffTime) > 0)
+        if(riderIds == null || riderIds.length ==0 || pickupTime == null || dropoffTime == null || pickupTime.compareTo(dropoffTime) > 0)
             return false;
 
            //riders and driver existence checks frist
@@ -284,10 +285,7 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
             if (riderIds[j] == riderIds[i]) //Same rider listed twice
                 return false; }
           }       
-      // لي تاني ؟
-        if (ridersList.length<=1) //One rider only is not allowed
-            return false;
-
+      
         IDriver driver = drivers.findById(driverId);
         if ( driver == null) //Driver must exist
             return false;
@@ -305,10 +303,10 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
         }
         for (int i = 0; i < ridersList.length; i++) {
             ride.addParticipant(ridersList[i]);
-            //Should I add to history?
+            addToHistory(ridersList[i], ride);
         }
         rides.addRide(ride);
-        //Should I add to history? اي
+        addToHistory(driver, ride);
         return true;
 
     }
@@ -364,6 +362,17 @@ LinkedList<IRide> all = rides.getAllAlphabetically();
      }
     return false;
 }
+
+private void addToHistory(IPerson person, IRide ride) {
+        LinkedList<IRide> history = person.getRideHistory();
+        if (!history.empty()) {
+            history.findFirst();
+            while (!history.last()) {
+                history.findNext();
+            }
+        }
+        history.insert(ride);
+    }
 
 
 
