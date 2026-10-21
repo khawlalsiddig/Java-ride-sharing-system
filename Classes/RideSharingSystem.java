@@ -131,7 +131,7 @@ public class RideSharingSystem implements IRideSharingSystem {
 
     //Returns all riders stored in the system.
     public LinkedList<IRider> getAllRiders() {
-        return riders.getAllRiders();
+        return riders.getAll();
     }
 
     //Searches for a driver by ID.
@@ -150,7 +150,7 @@ public class RideSharingSystem implements IRideSharingSystem {
 
     //Returns all drivers stored in the system.
     public LinkedList<IDriver> getAllDrivers() {
-        return drivers;
+        return drivers.getAll();
     }
 
     /**
@@ -179,8 +179,32 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - The ride must not conflict with the driver's current schedule.
      * It returns true if scheduled; false otherwise
      */
-    public boolean schedulePrivateRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int riderId, int driverId) { return false; }
+    public boolean schedulePrivateRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int riderId, int driverId) {
+           //pickupTime before dropoffTime
+        if(pickupTime != null && dropoffTime != null && pickupTime.compareTo(dropoffTime) < 0)
+            return false;
+           //rider and driver existence checks first
+        IRider rider = riders.findById(riderId);       
+        IDriver driver = drivers.findById(driverId);
+        if (rider == null || driver == null) 
+            return false;
+            //The ride must not conflict with the rider's current schedule.
+            // The ride must not conflict with the driver's current schedule.
+        if (hasPrivateConflict(riderId,driverId,pickupTime,dropoffTime))
+            return false;
 
+        PrivateRide ride;
+        try {   // the constructor rejects blank locations, before an ID is used
+            ride = new PrivateRide(pickupLocation, pickupTime, dropoffTime,dropoffLocation, driver, rider);
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+
+        rides.addRide(ride);
+        //Sholud add to the History of driver or rider but I don't know how!!!!
+        return true;
+    
+    }
     /**
      * Schedules a shared ride for multiple riders with one driver.
      * Requirements:
@@ -190,17 +214,68 @@ public class RideSharingSystem implements IRideSharingSystem {
      * - The ride must not conflict with the driver's current schedule.
      * It returns true if scheduled; false otherwise
      */
-    public boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId) { return false; }
+    public boolean scheduleSharedRide(String pickupLocation, IDateTime pickupTime, IDateTime dropoffTime, String dropoffLocation, int[] riderIds, int driverId);
+
+    //Usefull methods for Conflict detection 
+    private boolean overlaps(IDateTime pickOld, IDateTime dropOld, IDateTime pickNew, IDateTime dropNew) {
+        return pickOld.compareTo(dropNew) < 0 && PickNew.compareTo(dropOld)< 0;
+    }
+
+    private boolean hasPrivateConflict(int riderId, int driverId,IDateTime pickup, IDateTime dropoff) {
+    LinkedList<IRide> all = rides.getAllAlphabetically();
+    if (all.empty()) 
+        return false;
+    
+    all.findFirst();
+
+    while (true) {
+        IRide existing = all.retrieve();
+
+        if (overlaps(pickup, dropoff,existing.getPickupTime(),existing.getDropoffTime())) {
+            if (existing.getDriver().getId() == driverId || existing.hasRider(riderId))
+                return true;
+        }
+
+        if (all.last()) 
+            break;
+
+        all.findNext();
+    }
+
+    return false;
+}
 
     //Searches for all rides whose pickup location matches the given location (may return multiple if pickup locations repeat).
-    public LinkedList<IRide> searchRidesByPickupLocation(String pickupLocation) { return null; }
+    public LinkedList<IRide> searchRidesByPickupLocation(String pickupLocation){
+         return rides.findByPickupLocation(pickupLocation);
+    }
 
     //Searches for all rides that involve a rider with the given name.
-    public LinkedList<IRide> searchRidesByRiderName(String riderName) { return null; }
+    public LinkedList<IRide> searchRidesByRiderName(String riderName){
+        return rides.findByRiderName(riderName);
+    }
 
     //Returns all riders registered on a shared ride identified by its pickup location.
-    public LinkedList<IRider> getSharedRideParticipants(String pickupLocation) { return null; }
+    public LinkedList<IRider> getSharedRideParticipants(String pickupLocation){
+        LinkedList<IRide> matches = rides.findByPickupLocation(pickupLocation);
+
+         if (!matches.empty()) {
+            matches.findFirst();
+            while (true) {
+                if (matches.retrieve() instanceof ISharedRide) {
+                    return ((ISharedRide) matches.retrieve()).getParticipants();
+                }
+                if (matches.last()) 
+                    break;
+                matches.findNext();
+            }
+        }
+        return new LinkedList<IRider>();           // nothing found
+    
+    }
 
     //Returns all rides (private and shared) alphabetically ordered by pickup location.
-    public LinkedList<IRide> getAllRidesAlphabetically() { return null; }
+    public LinkedList<IRide> getAllRidesAlphabetically(){
+         return rides.getAllAlphabetically();
+    }
 }
