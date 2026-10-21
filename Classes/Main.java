@@ -87,12 +87,23 @@ private static Scanner input = new Scanner(System.in);
                 case 11:
                     // Read pickup location and get participants.
                     String pickUpLocation = readText("Pickup location of the shared ride: ");
-                    printList(system.getSharedRideParticipants(location),"No shared ride (or no riders) found at that pickup location.");
+                    printList(system.getSharedRideParticipants(pickUpLocation),"No shared ride (or no riders) found at that pickup location.");
                     break;
 
                 case 12:
                     // Ask PRIVATE or SHARED.
                     // Read the appropriate ride information.
+                     System.out.println("What kind of ride?");
+                    System.out.println("1. Private (one rider)");
+                    System.out.println("2. Shared (more than one rider)");
+                    int kind = readInt("Choice: ");
+
+                    while (kind != 1 || kind != 2){
+                     System.out.println("Invalid ride type. Ride not added.");
+                     kind = readInt("Choice: ");
+                    }
+
+
                     break;
 
                 case 0:
