@@ -3,34 +3,35 @@ public class RideList implements IRideList {
   private int count = 0;
   
     //Adds a ride and maintains alphabetical ordering by pickup location.
-    public boolean addRide (IRide ride){
-    if (ride == null || ride.hasRider(ride.getRideId()))
+    public boolean addRide(IRide ride) {
+    if (ride == null)
         return false;
-    
-    if (rides.empty()){
+
+    if (rides.empty()) {
         rides.insert(ride);
         count++;
         return true;
-    } 
-    
+    }
+
+    rides.findFirst();                       // FIX 1: start from the head
+
     while (true) {
-        if (ride.compareTo(rides.retrieve()) < 0) { //If the new should be before the current Swap the current with the new and insert the old after it
+        if (ride.compareTo(rides.retrieve()) < 0) {  // new ride goes before this one
             IRide old = rides.retrieve();
             rides.update(ride);
             rides.insert(old);
             count++;
-            return true;}
-
-        if (rides.last()) 
-            break;
-
-        rides.findNext(); //Keep looking for one that the new ride should be before
+            return true;
         }
-        rides.insert(ride);          // new ride is >= everything: append at the end
-        count++;
-        return true;
+        if (rides.last())
+            break;
+        rides.findNext();
     }
- 
+    rides.insert(ride);                      // new ride is >= everything: append
+    count++;
+    return true;
+}
+
     //Removes a ride by its unique ride ID.
     public boolean removeRideById(int rideId) {
         if (rides.empty())

@@ -8,7 +8,7 @@ public abstract class Person implements IPerson {
     protected Person(int id, String name, String phoneNumber) {
         this.id = id;
         this.name = name;
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber; //PHONE CHECKING HERE!!!!!
         this.rideHistory = new LinkedList<>();
     }
     
@@ -48,6 +48,6 @@ public abstract class Person implements IPerson {
     // Returns a formatted string describing this person.
     @Override
     public String toString() {
-        return "Person ID =" + id + ", Name='" + name + "', PhoneNumber='" + phoneNumber + "'}";
+        return "Person ID =" + id + ", Name='" + name + "', PhoneNumber='" + phoneNumber + "'";
     }
 }

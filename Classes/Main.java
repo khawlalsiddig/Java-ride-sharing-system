@@ -6,7 +6,7 @@ public class Main {
 private static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         RideSharingSystem system = new RideSharingSystem(); 
-        
+
          if (!system.loadRidersFromCSV(new File("riders_100.csv").getAbsolutePath())) {
              System.out.println("Error loading riders data.");
          }
@@ -64,8 +64,10 @@ private static Scanner input = new Scanner(System.in);
                     String email = readText("Email: ");
                     int riderId = readInt("Rider ID: ");
 
-                    system.addRider(new Rider(riderId, riderName, riderHomeCity, phoneNumber, email));
+                    if (system.addRider(new Rider(riderId, riderName, riderHomeCity, phoneNumber, email)))
                     System.out.println("Rider added successfully.");
+                    else
+                    System.out.println("Falied adding the rider.");
                     break;
 
                 case 5:

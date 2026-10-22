@@ -19,7 +19,8 @@ public class RiderList implements IRiderList {
     while (!riders.last() && riders.retrieve().getId() < rider.getId())
         riders.findNext();
     int curId = riders.retrieve().getId();
-    if (curId == rider.getId()) return false;
+    if (curId == rider.getId()) 
+        return false;
     if (curId < rider.getId()) {
         // current is the last node and smaller: append
         riders.insert(rider);

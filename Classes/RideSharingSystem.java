@@ -24,8 +24,8 @@ public class RideSharingSystem implements IRideSharingSystem {
                 String[] parts = line.split(",", -1);
                 if (parts.length < 5) return false;
                 int riderId = Integer.parseInt(parts[0].trim());
-                IRider rider = new Rider(riderId, parts[1].trim(), parts[2].trim(),
-                        parts[3].trim(), parts[4].trim());
+                IRider rider = new Rider(riderId, parts[1].trim(), parts[3].trim(),
+                                            parts[2].trim(), parts[4].trim());
                 if (!addRider(rider)) continue; // skip duplicates or invalid entries
             }
             return true;
