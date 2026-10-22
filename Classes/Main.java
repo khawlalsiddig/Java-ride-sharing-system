@@ -111,8 +111,8 @@ private static Scanner input = new Scanner(System.in);
 
                 case 10:
                     // Read rider name and search.
-                    String name = readText("Rider's full name: ");
-                    printList(system.searchRidesByRiderName(name), "No rides found for that rider.");
+                    String riderNameForRideSearch = readText("Rider's full name: ");
+                    printList(system.searchRidesByRiderName(riderNameForRideSearch), "No rides found for that rider.");
                     break;
 
                 case 11:
@@ -137,28 +137,27 @@ private static Scanner input = new Scanner(System.in);
                         IDateTime dropoffTime = readDateTime("Drop-off date/time (MM/DD/YYYY HH:MM): ");
                         String dropoffLocation = readText("Drop-off location: ");
 
-                    if (pickupTime == null || dropoffTime == null) 
+                    if (pickupTime == null || dropoffTime == null) //Don't add
                          System.out.println("Invalid date/time. Ride not added.");
-                    else {
-                        int driverId = readInt("Driver ID: ");
+                    else {//Add
+                        int driverIdForRideAdding = readInt("Driver ID: ");
                         String failMessage = "Failed to schedule the ride. Check that the rider(s) and driver exist, "
                                        +     "that pickup is before drop-off, and that there is no schedule conflict.";
                         String result;
 
                      if (kind == 1) {                                   // private ride
-                        int riderId = readInt("Rider ID: ");
-                        boolean scheduled = system.schedulePrivateRide(pickupLocation, pickupTime,dropoffTime, dropoffLocation, riderId, driverId);
-                        result = scheduled ? "Ride scheduled successfully." : failMessage;
-                    } 
-                    else {                                           // shared ride
+                        int riderIdForRideAdding = readInt("Rider ID: ");
+                        boolean scheduled = system.schedulePrivateRide(pickupLocation, pickupTime,dropoffTime, dropoffLocation, riderIdForRideAdding, driverIdForRideAdding);
+                        result = scheduled ? "Ride scheduled successfully." : failMessage; } 
+                    else {                                            // shared ride
                         int[] riderIds = readRiderIds("Rider IDs separated by commas (at least 2): ");
                         if (riderIds == null || riderIds.length < 2) 
-                        result = "A shared ride needs at least 2 valid rider IDs. Ride not added.";
-                
-                    else {
-                    boolean scheduled = system.scheduleSharedRide(pickupLocation, pickupTime, dropoffTime, dropoffLocation, riderIds, driverId);
-                    result = scheduled ? "Ride scheduled successfully." : failMessage;
-                            }
+                            result = "A shared ride needs at least 2 valid rider IDs. Ride not added.";
+        
+                        else {
+                            boolean scheduled = system.scheduleSharedRide(pickupLocation, pickupTime, dropoffTime, dropoffLocation, riderIds,driverIdForRideAdding);
+                            result = scheduled ? "Ride scheduled successfully." : failMessage;}
+                            
                         }
                 System.out.println(result);
                         }
