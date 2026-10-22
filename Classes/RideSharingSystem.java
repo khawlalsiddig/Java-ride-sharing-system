@@ -419,19 +419,27 @@ private void addToHistory(IPerson person, IRide ride) {
     //Returns all riders registered on a shared ride identified by its pickup location.
     public LinkedList<IRider> getSharedRideParticipants(String pickupLocation){
         LinkedList<IRide> matches = rides.findByPickupLocation(pickupLocation);
-
+        LinkedList <IRider> allParticipants = new LinkedList <IRider> ();
          if (!matches.empty()) {
             matches.findFirst();
             while (true) {
                 if (matches.retrieve() instanceof ISharedRide) {
-                    return ((ISharedRide) matches.retrieve()).getParticipants();
+                LinkedList <IRider> currentLinkedList=((ISharedRide) matches.retrieve()).getParticipants();
+                currentLinkedList.findFirst();
+                while (true){
+                   allParticipants.insert(currentLinkedList.retrieve());
+                if(currentLinkedList.last())
+                    break;
+                currentLinkedList.findNext();
+                }
+
                 }
                 if (matches.last()) 
                     break;
                 matches.findNext();
             }
         }
-        return new LinkedList<IRider>();           // nothing found
+        return  allParticipants;           // nothing found
     }
 
     //Returns all rides (private and shared) alphabetically ordered by pickup location.

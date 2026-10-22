@@ -33,7 +33,6 @@ private static Scanner input = new Scanner(System.in);
             System.out.println("10. Search rides by rider name");
             System.out.println("11. List shared ride participants");
             System.out.println("12. Add a ride");
-            System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
             choice = input.nextInt();
