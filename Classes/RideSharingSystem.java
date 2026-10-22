@@ -74,8 +74,8 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
 
             String type = parts[0].trim().toUpperCase();
             String pickupLocation = parts[1].trim();
-            IDateTime pickupTime = new DateTime(parts[2].trim());// يا بارسينغ يا كونستركتر
-            IDateTime dropoffTime = new DateTime(parts[3].trim());
+            IDateTime pickupTime = parseDate(parts[2].trim());
+            IDateTime dropoffTime = parseDate(parts[3].trim());
             String dropoffLocation = parts[4].trim();
             int driverId = Integer.parseInt(parts[5].trim());
 
@@ -103,7 +103,19 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
     }
 }
 
-    
+    public DateTime parseDate(String text) {
+        if(text == null || !text.matches("[0-9]{2}/[0-9]{2}/[0-9]{4} [0-9]{2}:[0-9]{2}")) {
+            throw new IllegalArgumentException("Invalid date/time format. Expected MM/DD/YYYY HH:MM");
+        }
+
+        int month = Integer.parseInt(text.substring(0, 2));
+        int day = Integer.parseInt(text.substring(3, 5));
+        int year = Integer.parseInt(text.substring(6, 10));
+        int hour = Integer.parseInt(text.substring(11, 13));
+        int minute = Integer.parseInt(text.substring(14, 16));
+
+        return new DateTime(year, month, day, hour, minute);
+    }
     public boolean addRider(IRider rider) {
         return riders.add(rider);
     }
@@ -221,7 +233,24 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
      * - All shared rides assigned to the driver are deleted.
      * It returns true if the driver was found and removed; false otherwise
      */
-    public boolean removeDriver(int driverId) { return false;     }
+    public boolean removeDriver(int driverId) { 
+        IDriver driver = drivers.findById(driverId);
+        if (driver == null) return false;
+
+        LinkedList<IRide> history = driver.getRideHistory();
+        if (!history.empty()) {
+            history.findFirst();
+            while (true) {
+                IRide ride = history.retrieve();
+                removeFromHistory(ride.getDriver(), ride.getRideId());
+                rides.removeRideById(ride.getRideId());
+
+                if (history.empty()) break;
+                history.findFirst();
+            }
+        }
+        return drivers.removeById(driverId);
+}
 
 
 

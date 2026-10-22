@@ -24157,3 +24157,306 @@ WARNING: Unmatched cancel notification for request id 7918
 2026.10.21 16:23:24 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
 2026.10.21 16:25:51 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
 2026.10.21 16:25:52 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:28:16 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:28:38 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java
+2026.10.21 16:28:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.21 16:28:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.21 16:28:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.21 16:28:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.21 16:28:38 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.21 16:28:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.21 16:29:31 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.21 16:29:32 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java
+2026.10.21 16:29:32 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:32 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:32 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:32 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:39 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:39 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:39 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:39 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:39 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:29:56 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:50:33 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:54:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 16:54:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 18:05:36 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 18:21:52 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java. Using fallback presentation compiler.
+2026.10.21 18:21:55 INFO  Shutting down server
+2026.10.21 18:21:55 INFO  Memory monitor stopped
+2026.10.21 18:21:55 INFO  shutting down Metals
+2026.10.21 18:21:55 INFO  Exiting server
+2026.10.22 16:25:15 INFO  Started: Metals version 1.6.9 in folders 'C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system' for client Visual Studio Code 1.143.0.
+2026.10.22 16:25:15 INFO  Memory monitor started
+2026.10.22 16:25:16 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.22 16:25:16 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:17 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:18 WARN  no build tool detected in workspace 'C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.22 16:25:18 WARN  Build server is not auto-connectable.
+2026.10.22 16:25:18 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java
+2026.10.22 16:25:18 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\Main.java
+2026.10.22 16:25:19 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/Main.java. Output:
+
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+Oct 22, 2026 4:25:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:19 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+Oct 22, 2026 4:25:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+Oct 22, 2026 4:25:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:20 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:20 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:20 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:21 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:24 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:24 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:25:37 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java
+2026.10.22 16:25:37 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:38 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/DateTime.java. Output:
+
+2026.10.22 16:25:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:39 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:52 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:52 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:55 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:57 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:25:57 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java. Using fallback presentation compiler.
+2026.10.22 16:26:00 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java
+2026.10.22 16:26:00 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:00 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:00 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+Oct 22, 2026 4:26:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 50
+2026.10.22 16:26:00 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:00 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:00 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:08 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:08 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:08 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:08 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:11 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:11 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\DateTime.java
+2026.10.22 16:26:11 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java
+2026.10.22 16:26:11 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:11 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/DateTime.java. Output:
+
+Oct 22, 2026 4:26:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 70
+2026.10.22 16:26:11 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:26:12 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:13 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:18 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:27 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:26:27 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:29 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:34 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:34 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:34 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:34 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:41 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:41 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:42 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:42 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:42 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:42 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:43 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:43 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:43 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:44 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:44 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:44 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:51 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:51 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:51 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:53 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:54 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:55 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:55 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:55 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:55 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:55 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:58 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:58 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:58 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:58 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:58 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:58 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:27:59 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:01 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:01 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:01 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:02 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:02 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:02 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:02 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:02 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:04 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:04 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:04 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:05 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:23 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:28:47 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:47 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:47 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:48 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:48 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:48 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:49 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:49 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:28:49 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:51 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:28:52 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:28:52 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:02 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:06 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:06 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:08 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:08 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:11 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:12 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:20 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:29:20 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:25 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:25 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:25 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:25 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:27 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:27 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:29:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:27 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:27 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:29:27 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:27 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:27 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:28 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:29:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:28 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:31 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:31 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:31 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:29:31 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:31 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:33 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:33 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:33 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:29:33 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:33 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:35 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:37 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:38 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:40 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:42 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:44 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:45 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:45 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:45 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:45 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:45 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:50 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:50 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java
+2026.10.22 16:29:50 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:50 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:29:50 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:01 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:01 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:01 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:03 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:03 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:03 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java
+2026.10.22 16:30:03 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:03 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:04 WARN  Running javac-semanticdb failed for file:///C:/Users/rawan/OneDrive/Desktop/DS%20Project/Java-ride-sharing-system/Classes/RideSharingSystem.java. Output:
+
+2026.10.22 16:30:03 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:04 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:03 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:05 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:07 WARN  no build target for: C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java
+2026.10.22 16:30:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:07 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:12 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:13 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:16 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:19 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:21 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:23 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:24 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:24 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:24 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:25 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:25 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:25 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:26 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:30 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:30 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:32 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
+2026.10.22 16:30:32 INFO  no build target found for C:\Users\rawan\OneDrive\Desktop\DS Project\Java-ride-sharing-system\Classes\RideSharingSystem.java. Using fallback presentation compiler.
