@@ -8,7 +8,7 @@ public abstract class Person implements IPerson {
     protected Person(int id, String name, String phoneNumber) {
         this.id = id;
         this.name = name;
-        this.phoneNumber = phoneNumber; //PHONE CHECKING HERE!!!!!
+        setPhoneNumber(phoneNumber); //PHONE CHECKING HERE!!!!!
         this.rideHistory = new LinkedList<>();
     }
     

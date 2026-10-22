@@ -56,17 +56,22 @@ private static Scanner input = new Scanner(System.in);
                     break;
 
                 case 4:
-                    
-                    String riderHomeCity = readText("Home city: ");
+                
+                    int riderId = readInt("Rider ID: ");   
                     String riderName = readText("Full name: ");
                     String phoneNumber = readText("Phone number: ");
+                    String riderHomeCity = readText("Home city: ");
                     String email = readText("Email: ");
-                    int riderId = readInt("Rider ID: ");
-
+                    
+                try{
                     if (system.addRider(new Rider(riderId, riderName, riderHomeCity, phoneNumber, email)))
-                    System.out.println("Rider added successfully.");
+                        System.out.println("Rider added successfully.");
                     else
-                    System.out.println("Falied adding the rider.");
+                        System.out.println("Falied adding the rider.");
+                    
+                  } catch (IllegalArgumentException e) {
+                        System.out.println("Error adding driver: " + e.getMessage());
+                    }
                     break;
 
                 case 5:
