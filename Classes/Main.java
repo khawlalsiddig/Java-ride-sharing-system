@@ -69,17 +69,34 @@ private static Scanner input = new Scanner(System.in);
                     break;
 
                 case 5:
-                    // Call getAllDrivers().
+                    printList(system.getAllDrivers(), "No drivers found.");
                     break;
 
                 case 6:
-                    // Read a VehicleType.
-                    // Call searchDriversByVehicleType().
+                    VehicleType vehicleType = readVehicleType();
+                    printList(system.searchDriversByVehicleType(vehicleType), "No drivers found with that vehicle type.");
                     break;
 
                 case 7:
-                    // Read driver fields, construct Driver,
-                    // and call addDriver().
+                    int driverId = readInt("Driver ID: ");
+                    String driverName = readText("Full name: ");
+                    String driverPhoneNumber = readText("Phone number: ");
+                    String vehiclePlate = readText("Vehicle plate: ");
+                    VehicleType driverVehicleType = readVehicleType();
+
+                    try {
+
+                        Driver newDriver = new Driver(driverId, driverName, driverPhoneNumber, vehiclePlate, driverVehicleType);
+                        
+                        if(system.addDriver(newDriver)) {
+                            System.out.println("Driver added successfully.");
+                        } else {
+                            System.out.println("Error adding driver");
+                        }
+
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Error adding driver: " + e.getMessage());
+                    }
                     break;
 
                 case 8:
@@ -172,6 +189,29 @@ private static Scanner input = new Scanner(System.in);
                 return Integer.parseInt(line);
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid number.");
+            }
+        }
+    }
+    private static VehicleType readVehicleType() {
+        while (true) {
+            System.out.println("1. Sedan");
+            System.out.println("2. Luxury sedan");
+            System.out.println("3. SUV");
+            System.out.println("4. Van");
+
+            int choice = readInt("Vehicle type: ");
+
+            switch (choice) {
+                case 1:
+                    return VehicleType.SEDAN;
+                case 2:
+                    return VehicleType.LUXURY_SEDAN;
+                case 3:
+                    return VehicleType.SUV;
+                case 4:
+                    return VehicleType.VAN;
+                default:
+                    System.out.println("Invalid choice. Enter a number from 1 to 4.");
             }
         }
     }

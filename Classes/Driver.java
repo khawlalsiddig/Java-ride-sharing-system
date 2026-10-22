@@ -4,8 +4,8 @@ public class Driver extends Person implements IDriver {
 
     public Driver(int id, String name, String phoneNumber, String vehiclePlate, VehicleType vehicleType) {
         super(id, name, phoneNumber);
-        this.vehiclePlate = vehiclePlate;
-        this.vehicleType = vehicleType;
+        setVehiclePlate(vehiclePlate);
+        setVehicleType(vehicleType);
     }
 
     public String getVehiclePlate() {
@@ -31,6 +31,11 @@ public class Driver extends Person implements IDriver {
 
     public int compareTo(IDriver other) {
         return Integer.compare(this.getId(), other.getId());
+    }
+
+    public String toString() {
+        return super.toString() + ", vehiclePlate='" + vehiclePlate + '\'' +
+                ", vehicleType=" + vehicleType;
     }
     
 }

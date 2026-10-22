@@ -110,6 +110,9 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
 
     
     public boolean addDriver(IDriver driver) {
+        if (driver == null|| drivers.findByVehiclePlate(driver.getVehiclePlate()) != null) {
+            return false;
+        }
         return drivers.add(driver);
     }    
 
