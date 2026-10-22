@@ -79,18 +79,6 @@ public class DateTime implements IDateTime {
         return Integer.compare(this.minute, other.getMinute());
     }
 
-    public static DateTime parse(String text) {
-        if(text == null || !text.matches("[0-9]{2}/[0-9]{2}/[0-9]{4} [0-9]{2}:[0-9]{2}")) {
-            throw new IllegalArgumentException("Invalid date/time format. Expected MM/DD/YYYY HH:MM");
-        }
-
-        int month = Integer.parseInt(text.substring(0, 2));
-        int day = Integer.parseInt(text.substring(3, 5));
-        int year = Integer.parseInt(text.substring(6, 10));
-        int hour = Integer.parseInt(text.substring(11, 13));
-        int minute = Integer.parseInt(text.substring(14, 16));
-
-        return new DateTime(year, month, day, hour, minute);
-    }
+    
 }
 
