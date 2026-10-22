@@ -121,21 +121,53 @@ private static Scanner input = new Scanner(System.in);
                     printList(system.getSharedRideParticipants(pickUpLocation),"No shared ride (or no riders) found at that pickup location.");
                     break;
 
-                case 12:
+                case 12:{
                     // Ask PRIVATE or SHARED.
                     // Read the appropriate ride information.
-                     System.out.println("What kind of ride?");
+                    System.out.println("What kind of ride?");
                     System.out.println("1. Private (one rider)");
                     System.out.println("2. Shared (more than one rider)");
                     int kind = readInt("Choice: ");
 
-                    while (kind != 1 || kind != 2){
+                    if (kind != 1 && kind != 2) 
                      System.out.println("Invalid ride type. Ride not added.");
-                     kind = readInt("Choice: ");
+                    else {
+                        String pickupLocation = readText("Pickup location: ");
+                        IDateTime pickupTime = readDateTime("Pickup date/time (MM/DD/YYYY HH:MM): ");
+                        IDateTime dropoffTime = readDateTime("Drop-off date/time (MM/DD/YYYY HH:MM): ");
+                        String dropoffLocation = readText("Drop-off location: ");
+
+                    if (pickupTime == null || dropoffTime == null) 
+                         System.out.println("Invalid date/time. Ride not added.");
+                    else {
+                        int driverId = readInt("Driver ID: ");
+                        String failMessage = "Failed to schedule the ride. Check that the rider(s) and driver exist, "
+                                       +     "that pickup is before drop-off, and that there is no schedule conflict.";
+                        String result;
+
+                     if (kind == 1) {                                   // private ride
+                        int riderId = readInt("Rider ID: ");
+                        boolean scheduled = system.schedulePrivateRide(pickupLocation, pickupTime,dropoffTime, dropoffLocation, riderId, driverId);
+                        result = scheduled ? "Ride scheduled successfully." : failMessage;
+                    } 
+                    else {                                           // shared ride
+                        int[] riderIds = readRiderIds("Rider IDs separated by commas (at least 2): ");
+                        if (riderIds == null || riderIds.length < 2) 
+                        result = "A shared ride needs at least 2 valid rider IDs. Ride not added.";
+                
+                    else {
+                    boolean scheduled = system.scheduleSharedRide(pickupLocation, pickupTime, dropoffTime, dropoffLocation, riderIds, driverId);
+                    result = scheduled ? "Ride scheduled successfully." : failMessage;
+                            }
+                        }
+                System.out.println(result);
+                        }
+                    }
+                break;
                     }
 
 
-                    break;
+                    
 
                 case 0:
                     System.out.println("Goodbye!");
@@ -215,4 +247,37 @@ private static Scanner input = new Scanner(System.in);
             }
         }
     }
+
+    /** Reads "MM/DD/YYYY HH:MM" and returns a DateTime, or null if the text is invalid. */
+    private static IDateTime readDateTime(String prompt) {
+        String text = readText(prompt);
+        try {
+            String[] parts = text.split(" +");
+            String[] date = parts[0].split("/");
+            String[] time = parts[1].split(":");
+            return new DateTime(Integer.parseInt(date[2]), Integer.parseInt(date[0]),
+                                Integer.parseInt(date[1]), Integer.parseInt(time[0]),
+                                Integer.parseInt(time[1]));
+        } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
+            return null;
+        }
+    }
+
+    private static int[] readRiderIds(String prompt) {
+        String text = readText(prompt);
+        if (text.isEmpty()) {
+            return null;
+        }
+        String[] pieces = text.split("[,\\s]+");
+        int[] ids = new int[pieces.length];
+        try {
+            for (int i = 0; i < pieces.length; i++) {
+                ids[i] = Integer.parseInt(pieces[i]);
+            }
+        } catch (NumberFormatException e) {
+            return null;
+        }
+        return ids;
+    }
+
 }
