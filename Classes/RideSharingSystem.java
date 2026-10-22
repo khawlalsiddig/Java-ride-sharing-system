@@ -18,7 +18,6 @@ public class RideSharingSystem implements IRideSharingSystem {
 	// Returns true if loading succeeds; false otherwise.
     public boolean loadRidersFromCSV(String ridersFilePath) {
         try (Scanner scanner = new Scanner(new File(ridersFilePath))) {
-            if (scanner.hasNextLine()) scanner.nextLine(); // header
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine().trim();
                 if (line.isEmpty()) continue;
@@ -33,14 +32,13 @@ public class RideSharingSystem implements IRideSharingSystem {
         } catch (FileNotFoundException | NumberFormatException e) {
             return false;
         }
+        
     }
 
 	// Loads drivers from a CSV file.
 	// Returns true if loading succeeds; false otherwise.
     public boolean loadDriversFromCSV(String driversFilePath) {
     try (Scanner scanner = new Scanner(new File(driversFilePath))) {
-        if (scanner.hasNextLine()) scanner.nextLine();   // header
-
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             if (line.trim().isEmpty()) continue;

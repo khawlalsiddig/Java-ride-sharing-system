@@ -1,19 +1,19 @@
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
 private static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-
         RideSharingSystem system = new RideSharingSystem(); 
-        // موضوع انها تدينا false لو فيه مشكلة في تحميل البيانات من الملفات
-         if (!system.loadRidersFromCSV("riders 100.csv")) {
+        
+         if (!system.loadRidersFromCSV(new File("riders_100.csv").getAbsolutePath())) {
              System.out.println("Error loading riders data.");
          }
-         if (!system.loadDriversFromCSV("drivers 30.csv")) {
+         if (!system.loadDriversFromCSV(new File("drivers_30.csv").getAbsolutePath())) {
              System.out.println("Error loading drivers data.");
          }
-         if (!system.loadRidesFromCSV("rides 40.csv")) {
+         if (!system.loadRidesFromCSV(new File("rides_40.csv").getAbsolutePath())) {
              System.out.println("Error loading rides data.");
          }
 
@@ -157,7 +157,7 @@ private static Scanner input = new Scanner(System.in);
                         else {
                             boolean scheduled = system.scheduleSharedRide(pickupLocation, pickupTime, dropoffTime, dropoffLocation, riderIds,driverIdForRideAdding);
                             result = scheduled ? "Ride scheduled successfully." : failMessage;}
-                            
+
                         }
                 System.out.println(result);
                         }
