@@ -24,7 +24,7 @@ The diagrams show the main classes, their fields, and the relationships between 
   - Add, remove and search methods, including the cascade deletes in `removeRider` and `removeDriver`
   - Scheduling: `schedulePrivateRide` and `scheduleSharedRide`, which include the time-overlap conflict checks
 - **`Main`:** the menu loop and the 12 menu options.
-- **Helpers and constructors:** the constructors and any extra helpers we add (for example parsing a `DateTime` from `MM/DD/YYYY HH:MM`, converting a CSV vehicle type like `LUXURY SEDAN` to `VehicleType.LUXURY_SEDAN`, or adding and removing rides in a person's history).
+- **Helpers and constructors:** the constructors and any extra helpers we add (for example parsing a `DateTime` from `MM/DD/YYYY HH:MM`, or adding and removing rides in a person's history).
 
 ### Notation and modeling choices
 
