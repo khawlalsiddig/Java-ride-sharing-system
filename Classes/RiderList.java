@@ -119,7 +119,16 @@ public class RiderList implements IRiderList {
 
     // Return all riders
     public LinkedList<IRider> getAll() {
-        return riders;
+        LinkedList<IRider> copyRiders = new LinkedList<IRider>();
+        if (!riders.empty()) {
+            riders.findFirst();
+            while (!riders.last()) {
+                copyRiders.insert(riders.retrieve());
+                riders.findNext();
+            }
+            copyRiders.insert(riders.retrieve());
+        }
+        return copyRiders;
     }
 
     // Remove rider by ID

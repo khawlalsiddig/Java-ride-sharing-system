@@ -33,10 +33,9 @@ private static Scanner input = new Scanner(System.in);
             System.out.println("10. Search rides by rider name");
             System.out.println("11. List shared ride participants");
             System.out.println("12. Add a ride");
-            System.out.print("Enter your choice: ");
 
-            choice = input.nextInt();
-            input.nextLine();
+            choice = readInt("Enter your choice(1-12) or 0 for exit: ");  // Read the choice as an integer
+            input.nextLine(); // Consume the newline character after reading the integer
 
             switch (choice) {
                 case 1:
@@ -67,7 +66,7 @@ private static Scanner input = new Scanner(System.in);
                     if (system.addRider(new Rider(riderId, riderName,phoneNumber, email,riderHomeCity)))
                         System.out.println("Rider added successfully.");
                     else
-                        System.out.println("Falied adding the rider.");
+                        System.out.println("Failed adding the rider.");
 
                   } catch (IllegalArgumentException e) {
                         System.out.println("Error adding driver: " + e.getMessage());

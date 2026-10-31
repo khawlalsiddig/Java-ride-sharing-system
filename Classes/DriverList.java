@@ -108,7 +108,17 @@ public class DriverList implements IDriverList {
     }
 
     public LinkedList<IDriver> getAll() {
-        return drivers;
+        // Return a copy of the list of drivers
+        LinkedList<IDriver> copyDrivers = new LinkedList<IDriver>();
+        if (!drivers.empty()) {
+            drivers.findFirst();
+            while (!drivers.last()) {
+                copyDrivers.insert(drivers.retrieve());
+                drivers.findNext();
+            }
+            copyDrivers.insert(this.drivers.retrieve());
+        }
+        return copyDrivers;
     }
 
     public boolean removeById(int driverId) {

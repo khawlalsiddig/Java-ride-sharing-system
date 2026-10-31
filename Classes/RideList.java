@@ -13,7 +13,7 @@ public class RideList implements IRideList {
         return true;
     }
 
-    rides.findFirst();                       // FIX 1: start from the head
+    rides.findFirst();                       
 
     while (true) {
         if (ride.compareTo(rides.retrieve()) < 0) {  // new ride goes before this one
@@ -108,7 +108,7 @@ public class RideList implements IRideList {
         return list;
     }
 
-   //Private method that return true if the Rider exesit in Ride
+   //Private method that return true if the Rider exits in Ride
     private boolean hasRiderNamed(IRide ride, String fullName) {
         if (ride instanceof IPrivateRide) { //For private Ride
             return ((IPrivateRide) ride).getRider().getName().equals(fullName);

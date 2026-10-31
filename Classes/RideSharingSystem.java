@@ -311,7 +311,7 @@ public boolean loadRidesFromCSV(String ridesFilePath) {
                 return false;
             ridersList[i] =rider;
 
-            for (int j = 0; j < i; j++) {// لي ؟
+            for (int j = 0; j < i; j++) {
             if (riderIds[j] == riderIds[i]) //Same rider listed twice
                 return false; }
           }       
