@@ -64,11 +64,11 @@ private static Scanner input = new Scanner(System.in);
                     String email = readText("Email: ");
                     
                 try{
-                    if (system.addRider(new Rider(riderId, riderName, riderHomeCity, phoneNumber, email)))
+                    if (system.addRider(new Rider(riderId, riderName,phoneNumber, email,riderHomeCity)))
                         System.out.println("Rider added successfully.");
                     else
                         System.out.println("Falied adding the rider.");
-                    
+
                   } catch (IllegalArgumentException e) {
                         System.out.println("Error adding driver: " + e.getMessage());
                     }
@@ -127,7 +127,7 @@ private static Scanner input = new Scanner(System.in);
                     printList(system.getSharedRideParticipants(pickUpLocation),"No shared ride (or no riders) found at that pickup location.");
                     break;
 
-                case 12:{
+                case 12:
                     // Ask PRIVATE or SHARED.
                     // Read the appropriate ride information.
                     System.out.println("What kind of ride?");
@@ -169,10 +169,6 @@ private static Scanner input = new Scanner(System.in);
                         }
                     }
                 break;
-                    }
-
-
-                    
 
                 case 0:
                     System.out.println("Goodbye!");
@@ -263,7 +259,8 @@ private static Scanner input = new Scanner(System.in);
             return new DateTime(Integer.parseInt(date[2]), Integer.parseInt(date[0]),
                                 Integer.parseInt(date[1]), Integer.parseInt(time[0]),
                                 Integer.parseInt(time[1]));
-        } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }
